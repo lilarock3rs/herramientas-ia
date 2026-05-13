@@ -1,0 +1,26 @@
+2026-05-12T22:53:53Z Log file: migration_20260513_035353.log
+2026-05-12T22:53:56Z Authenticated to Salesforce: https://revpartners7-dev-ed.develop.my.salesforce.com
+2026-05-12T22:53:56Z Starting migration — 1 object mapping(s), file-size tier: paid (2 GB)
+2026-05-12T22:53:56Z Fetching ContentVersions from Salesforce...
+2026-05-12T22:53:57Z Found 19 ContentVersion record(s)
+2026-05-12T22:53:57Z Fetching ContentDocumentLinks for 19 document(s)...
+2026-05-12T22:53:57Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBXtAAM hs_note_id=null file_size_mb=0.118 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:58Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBZVAA2 hs_note_id=null file_size_mb=0.155 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:58Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBb7AAE hs_note_id=null file_size_mb=0.149 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:58Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBcjAAE hs_note_id=null file_size_mb=0.150 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:59Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBNVAA2 hs_note_id=null file_size_mb=0.155 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:59Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dBeLAAU hs_note_id=null file_size_mb=0.158 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2']
+2026-05-12T22:53:59Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dC7NAAU hs_note_id=null file_size_mb=0.118 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:00Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dC8zAAE hs_note_id=null file_size_mb=0.155 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:01Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dCAbAAM hs_note_id=null file_size_mb=0.149 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:01Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dCCDAA2 hs_note_id=null file_size_mb=0.150 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:02Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dA9hAAE hs_note_id=null file_size_mb=0.155 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:02Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009d2uQAAQ hs_note_id=null file_size_mb=0.158 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:03Z [NOT_FOUND] object=unknown sf_attachment_id=068aj000009dCKHAA2 hs_note_id=null file_size_mb=0.941 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '500aj0000073BpCAAU']
+2026-05-12T22:54:03Z [NOT_FOUND] object=unknown sf_attachment_id=068aj00000DeZ9FAAV hs_note_id=null file_size_mb=0.065 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '006aj00000HROu7AAH']
+2026-05-12T22:54:04Z [NOT_FOUND] object=unknown sf_attachment_id=068aj00000DeZArAAN hs_note_id=null file_size_mb=0.137 message=No HubSpot record matched SF entity IDs: ['005aj0000034GCXAA2', '006aj00000HR8EEAA1']
+2026-05-12T22:54:05Z [NOT_FOUND] object=unknown sf_attachment_id=068aj00000EM8JpAAL hs_note_id=null file_size_mb=0.074 message=No HubSpot record matched SF entity IDs: ['001aj00001RbJZtAAN', '005aj0000034GCXAA2']
+2026-05-12T22:54:05Z [NOT_FOUND] object=unknown sf_attachment_id=068aj00000EMRkfAAH hs_note_id=null file_size_mb=0.005 message=No HubSpot record matched SF entity IDs: ['003aj00000eHgVGAA0', '005aj0000034GCXAA2']
+2026-05-12T22:54:05Z [SKIPPED] object=unknown sf_attachment_id=068aj00000J13UrAAJ hs_note_id=null file_size_mb=1.601 message=Already processed
+2026-05-12T22:54:10Z [SUCCESS] object=contacts sf_attachment_id=068aj00000J13lhAAB hs_note_id=109523068324 file_size_mb=0.695 message=Linked to contacts/10828096913
+2026-05-12T22:54:10Z Done. success=1 skipped=1 not_found=17 too_large=0 error=0

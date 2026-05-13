@@ -17,10 +17,8 @@ class ObjectMapping:
 class Config:
     sf_client_id: str
     sf_client_secret: str
-    sf_username: str
-    sf_password: str
-    sf_security_token: str
-    sf_domain: str
+    sf_refresh_token: str
+    sf_instance_url: str
     hs_access_token: str
     object_mappings: List[ObjectMapping]
     paid_tier: bool
@@ -33,9 +31,8 @@ def load_config(env_file: str = ".env") -> Config:
     required = [
         "SF_CLIENT_ID",
         "SF_CLIENT_SECRET",
-        "SF_USERNAME",
-        "SF_PASSWORD",
-        "SF_SECURITY_TOKEN",
+        "SF_REFRESH_TOKEN",
+        "SF_INSTANCE_URL",
         "HS_ACCESS_TOKEN",
         "HS_OBJECT_MAPPINGS",
     ]
@@ -65,10 +62,8 @@ def load_config(env_file: str = ".env") -> Config:
     return Config(
         sf_client_id=os.environ["SF_CLIENT_ID"],
         sf_client_secret=os.environ["SF_CLIENT_SECRET"],
-        sf_username=os.environ["SF_USERNAME"],
-        sf_password=os.environ["SF_PASSWORD"],
-        sf_security_token=os.environ["SF_SECURITY_TOKEN"],
-        sf_domain=os.getenv("SF_DOMAIN", "login"),
+        sf_refresh_token=os.environ["SF_REFRESH_TOKEN"],
+        sf_instance_url=os.environ["SF_INSTANCE_URL"].rstrip("/"),
         hs_access_token=os.environ["HS_ACCESS_TOKEN"],
         object_mappings=mappings,
         paid_tier=os.getenv("PAID_TIER", "false").lower() == "true",

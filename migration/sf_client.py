@@ -15,29 +15,28 @@ class SalesforceClient:
     def __init__(self, config) -> None:
         self._config = config
         self.access_token: str = ""
-        self.instance_url: str = ""
+        self.instance_url: str = config.sf_instance_url
         self._session = requests.Session()
         self._authenticate()
 
     # ------------------------------------------------------------------
-    # Auth
+    # Auth — refresh_token grant
     # ------------------------------------------------------------------
 
     def _authenticate(self) -> None:
-        domain = self._config.sf_domain
-        url = f"https://{domain}.salesforce.com/services/oauth2/token"
+        url = f"{self._config.sf_instance_url}/services/oauth2/token"
         payload = {
-            "grant_type": "password",
+            "grant_type": "refresh_token",
             "client_id": self._config.sf_client_id,
             "client_secret": self._config.sf_client_secret,
-            "username": self._config.sf_username,
-            "password": self._config.sf_password + self._config.sf_security_token,
+            "refresh_token": self._config.sf_refresh_token,
         }
         resp = requests.post(url, data=payload, timeout=30)
         resp.raise_for_status()
         data = resp.json()
         self.access_token = data["access_token"]
-        self.instance_url = data["instance_url"]
+        # instance_url in the response is authoritative; keep in sync
+        self.instance_url = data.get("instance_url", self.instance_url)
         self._session.headers.update({"Authorization": f"Bearer {self.access_token}"})
         logger.info("Authenticated to Salesforce: %s", self.instance_url)
 
