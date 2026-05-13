@@ -124,7 +124,7 @@ HS_OBJECT_MAPPINGS=
 ```
 ┌─────────────────────────────────────────────────────┐
 │                    CLI Runner                        │
-│              python migrate.py                       │
+│              python3 migrate.py                      │
 └──────────────────────┬──────────────────────────────┘
                        │
           ┌────────────▼────────────┐
@@ -183,6 +183,19 @@ HS_OBJECT_MAPPINGS=
 - SQLite persists `ContentVersion.Id` values from SF that were successfully migrated
 - On re-run, `SUCCESS` records are skipped without making any API calls
 - `ERROR` and `NOT_FOUND` records are retried on each run
+
+#### State Schema (`migration_state.db`)
+
+| Column | Type | Description |
+|---|---|---|
+| `attachment_id` | TEXT PK | `ContentVersion.Id` from Salesforce |
+| `status` | TEXT | `SUCCESS`, `ERROR`, `NOT_FOUND`, `FILE_TOO_LARGE`, `SKIPPED` |
+| `hs_note_id` | TEXT | HubSpot note engagement ID (populated on `SUCCESS`) |
+| `hs_contact_id` | TEXT | HubSpot record ID the note was associated to (populated on `SUCCESS`) |
+| `salesforce_contact_id` | TEXT | SF entity ID (`LinkedEntityId`) that matched the HubSpot record (populated on `SUCCESS`) |
+| `processed_at` | TEXT | UTC ISO-8601 timestamp of the last write |
+
+New columns are added automatically via `ALTER TABLE` if the database already exists from a previous run.
 
 #### Throttling
 
