@@ -195,7 +195,12 @@ def run_migration(env_file: str, log_file: Optional[str]) -> None:
 
             hs.associate_note(note_id, matched_object_type, hs_record_id)
 
-            state.mark(cv_id, "SUCCESS", note_id)
+            state.mark(
+                cv_id, "SUCCESS",
+                hs_note_id=note_id,
+                hs_contact_id=hs_record_id,
+                salesforce_contact_id=matched_sf_entity_id,
+            )
             _log_result(
                 "SUCCESS", matched_object_type, cv_id, note_id, file_size,
                 f"Linked to {matched_object_type}/{hs_record_id}"
